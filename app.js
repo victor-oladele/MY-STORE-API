@@ -9,14 +9,16 @@ require('dotenv').config()
 
 const port = process.env.PORT || 5000
 
-
+// middleware
 app.use(express.json())
 app.use(express.static('./views'))
 
 
+// routes
 app.use('/api/v1/products' , productsroute)
 
 
+// error handler middleware
 app.use(errorhandler)
 app.use(notfound)
 
